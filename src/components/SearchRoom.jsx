@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import '../assets/css/fontawesome.css';
 import '../assets/css/styles.css';
 import 'bootstrap/dist/css/bootstrap.min.css'
@@ -9,23 +9,28 @@ import properties_03 from '../assets/images/property-03.jpg'
 import properties_04 from '../assets/images/property-04.jpg'
 import properties_05 from '../assets/images/property-05.jpg'
 import properties_06 from '../assets/images/property-06.jpg'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const SearchRoom = () => {
-    const [filter, setFilter] = useState('*')
+  const [filter, setFilter] = useState('*')
+  const navigate = useNavigate();
 
-    const handleFilterChange = (filterType) => {
-        setFilter(filterType)
-    }
+  const handleFilterChange = (filterType) => {
+    setFilter(filterType)
+  }
 
-    const rooms = [
-        { id: 1, type: 'sgr', image: properties_01, name: 'DELUXE VILLA', price: 3500, NumberOfRooms: 1, area: '15x15'},
-        { id: 2, type: 'sgr', image: properties_02, name: 'PREMIER DULUXE VILLA', price: 4000, NumberOfRooms: 1, area: '15x17'},
-        { id: 3, type: 'sgr', image: properties_03, name: 'POOL VILLA', price: 5000, NumberOfRooms: 1, area: '15x20'},
-        { id: 4, type: 'dbr', image: properties_04, name: 'DELUXE VILLA', price: 6000, NumberOfRooms: 2, area: '20x20'},
-        { id: 5, type: 'dbr', image: properties_05, name: 'PREMIER DELUXE VILLA', price: 6500, NumberOfRooms: 3, area: '25x25'},
-        { id: 6, type: 'dbr', image: properties_06, name: 'POOL VILLA', price: 7500, NumberOfRooms: 4, area: '30x30'}
-    ]
+  const handleRoomDetails = (roomId) => {
+    navigate(`/RoomDetails/${roomId}`);
+  };
+
+  const rooms = [
+    { id: 1, type: 'sgr', image: properties_01, name: 'DELUXE VILLA', price: 3500, NumberOfRooms: 1, area: '15x15' },
+    { id: 2, type: 'sgr', image: properties_02, name: 'PREMIER DULUXE VILLA', price: 4000, NumberOfRooms: 1, area: '15x17' },
+    { id: 3, type: 'sgr', image: properties_03, name: 'POOL VILLA', price: 5000, NumberOfRooms: 1, area: '15x20' },
+    { id: 4, type: 'dbr', image: properties_04, name: 'DELUXE VILLA', price: 6000, NumberOfRooms: 2, area: '20x20' },
+    { id: 5, type: 'dbr', image: properties_05, name: 'PREMIER DELUXE VILLA', price: 6500, NumberOfRooms: 3, area: '25x25' },
+    { id: 6, type: 'dbr', image: properties_06, name: 'POOL VILLA', price: 7500, NumberOfRooms: 4, area: '30x30' }
+  ]
 
   return (
     <div>
@@ -60,8 +65,7 @@ const SearchRoom = () => {
                 <ul className="nav">
                   <li><Link to="/" className="active">Home</Link></li>
                   <li><Link to="/SearchRoom">Search Room</Link></li>
-                  <li><Link to="/RoomDetails">Room Details</Link></li>
-                  <li><Link to="/contact">Contact Us</Link></li>
+                  <li><Link to="/Contact">Contact Us</Link></li>
                   <li><Link to="/RoomDetails"><i className="fa fa-calendar"></i>Book Now</Link></li>
                 </ul>
                 <Link className='menu-trigger'>
@@ -89,28 +93,31 @@ const SearchRoom = () => {
             <li><a className={filter === '*' ? 'is_active' : ''} href="#!" onClick={() => handleFilterChange('*')}>Show All</a></li>
             <li><a className={filter === 'sgr' ? 'is_active' : ''} href="#!" onClick={() => handleFilterChange('sgr')}>Single Room</a></li>
             <li><a className={filter === 'dbr' ? 'is_active' : ''} href="#!" onClick={() => handleFilterChange('dbr')}>Double Room</a></li>
-
           </ul>
           <div className="row properties-box">
-          {rooms.filter(room => filter === '*' || room.type === filter).map(room => (
-            <div key={room.id} className={`col-lg-4 col-md-6 align-self-center mb-30 properties-items col-md-6 ${room.type}`}>
-              <div className="item">
-                <Link to="/RoomDetails"><img src={room.image} alt={room.name} /></Link>
-                <span className="category">{room.type === 'sgr' ? 'Single Room' : 'Double Room'}</span>
-                <h6>THB {room.price}</h6>
-                <h4><Link to="/RoomDetails">{room.name}</Link></h4>
-                <ul>
-                  <li>Number of rooms: <span>{room.NumberOfRooms}</span></li>
-                  <li>Area: <span>{room.area}</span></li>
-                  <li>Stay 2 Nights Extra Save 5%</li>
-                </ul>
-                <div className="main-button">
-                  <Link to="/RoomDetails">Room Details</Link>
+            {rooms.filter(room => filter === '*' || room.type === filter).map(room => (
+              <div key={room.id} className={`col-lg-4 col-md-6 align-self-center mb-30 properties-items ${room.type}`}>
+                <div className="item">
+                  <Link to={`/RoomDetails/${room.id}`} onClick={() => handleRoomDetails(room.id)}>
+                    <img src={room.image} alt={room.name} />
+                  </Link>
+                  <span className="category">{room.type === 'sgr' ? 'Single Room' : 'Double Room'}</span>
+                  <h6>THB {room.price}</h6>
+                  <h4><Link to={`/RoomDetails/${room.id}`} onClick={() => handleRoomDetails(room.id)}>
+                    {room.name}
+                  </Link></h4>
+                  <ul>
+                    <li>Number of rooms: <span>{room.NumberOfRooms}</span></li>
+                    <li>Area: <span>{room.area}</span></li>
+                    <li>Stay 2 Nights Extra Save 5%</li>
+                  </ul>
+                  <div className="main-button">
+                    <Link to={`/RoomDetails/${room.id}`} onClick={() => handleRoomDetails(room.id)}>Room Details</Link>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
           <div className="row">
             <div className="col-lg-12">
               <ul className="pagination">

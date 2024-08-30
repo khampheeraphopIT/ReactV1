@@ -68,8 +68,7 @@ const Home = () => {
                 <ul className="nav">
                   <li><Link to="/" className="active">Home</Link></li>
                   <li><Link to="/SearchRoom">Search Room</Link></li>
-                  <li><Link to="/RoomDetails">Room Details</Link></li>
-                  <li><Link to="contact.html">Contact Us</Link></li>
+                  <li><Link to="/Contact">Contact Us</Link></li>
                   <li><Link to="/RoomDetails"><i className="fa fa-calendar"></i>Book Now</Link></li>
                 </ul>
                 <div className='menu-trigger'>
@@ -152,7 +151,7 @@ const Home = () => {
                           <p>Perfect for solo travelers, our Single Room offers a cozy space with one bed, ideal for rest and relaxation.
                             <br /><br />The room is equipped with essential amenities such as a work desk, flat-screen TV, and complimentary Wi-Fi, ensuring a smooth and comfortable stay.</p>
                           <div className="main-button">
-                            <Link to="/RoomDetails"><i className="fa fa-calendar"></i> Room Details </Link>
+                            <Link to="/RoomDetails/1"><i className="fa fa-calendar"></i> Room Details </Link>
                           </div>
                         </div>
                       </div>
@@ -179,7 +178,7 @@ const Home = () => {
                           <p>Ideal for couples or friends traveling together, our Double Room features a spacious layout with either one large bed or two single beds, allowing you to choose the most convenient option.
                             <br /><br />The room also comes with amenities like air conditioning, a private bathroom, and minibar.</p>
                           <div className="main-button">
-                            <Link to="/RoomDetails"><i className="fa fa-calendar"></i> Room Details </Link>
+                            <Link to="/RoomDetails/4"><i className="fa fa-calendar"></i> Room Details </Link>
                           </div>
                         </div>
                       </div>
@@ -194,115 +193,127 @@ const Home = () => {
       </div>
 
       <div className="properties section">
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-4 offset-lg-4">
-              <div className="section-heading text-center">
-                <h6>| Room Specifications</h6>
-                <h2>Find Your Favorite Room!</h2>
-              </div>
-            </div>
-          </div>
-          <div className="row">
-            <div className="col-lg-4 col-md-6">
-              <div className="item">
-                <Link to="#d"><img src={properties_01} alt="" /></Link>
-                <span className="category">Single Room</span>
-                <h6>THB 3500</h6>
-                <h4>DELUXE VILLA</h4>
-                <ul>
-                  <li>Number of rooms: <span>1</span></li>
-                  <li>Area: <span>15 x 15m</span></li>
-                  <li>Stay 2 Nights Extra Save <span>THB 500</span></li>
-                </ul>
-                <div className="main-button">
-                  <Link to="/RoomDetails"><i className="fa fa-calendar"></i> Room Details </Link>
+            <div className="container">
+                <div className="row">
+                    <div className="col-lg-4 offset-lg-4">
+                        <div className="section-heading text-center">
+                            <h6>| Room Specifications</h6>
+                            <h2>Find Your Favorite Room!</h2>
+                        </div>
+                    </div>
                 </div>
-              </div>
-            </div>
-            <div className="col-lg-4 col-md-6">
-              <div className="item">
-                <Link to="#d"><img src={properties_02} alt="" /></Link>
-                <span className="category">Single Room</span>
-                <h6>THB 3500</h6>
-                <h4>DELUXE VILLA</h4>
-                <ul>
-                  <li>Number of rooms: <span>1</span></li>
-                  <li>Area: <span>15 x 15m</span></li>
-                  <li>Stay 2 Nights Extra Save <span>THB 500</span></li>
-                </ul>
-                <div className="main-button">
-                  <Link to="/RoomDetails"><i className="fa fa-calendar"></i> Room Details </Link>
+                <div className="row">
+                    <div className="col-lg-4 col-md-6">
+                        <div className="item">
+                            <Link to={`/RoomDetails/1`}>
+                                <img src={properties_01} alt="DELUXE VILLA" />
+                            </Link>
+                            <span className="category">Single Room</span>
+                            <h6>THB 3500</h6>
+                            <h4>DELUXE VILLA</h4>
+                            <ul>
+                                <li>Number of rooms: <span>1</span></li>
+                                <li>Area: <span>15 x 15m</span></li>
+                                <li>Stay 2 Nights Extra Save <span>5%</span></li>
+                            </ul>
+                            <div className="main-button">
+                                <Link to={`/RoomDetails/1`}><i className="fa fa-calendar"></i> Room Details </Link>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="col-lg-4 col-md-6">
+                        <div className="item">
+                            <Link to={`/RoomDetails/2`}>
+                                <img src={properties_02} alt="DELUXE VILLA" />
+                            </Link>
+                            <span className="category">Single Room</span>
+                            <h6>THB 4000</h6>
+                            <h4>PREMIER DELUXE VILLA</h4>
+                            <ul>
+                                <li>Number of rooms: <span>1</span></li>
+                                <li>Area: <span>15 x 17m</span></li>
+                                <li>Stay 2 Nights Extra Save <span>5%</span></li>
+                            </ul>
+                            <div className="main-button">
+                                <Link to={`/RoomDetails/2`}><i className="fa fa-calendar"></i> Room Details </Link>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="col-lg-4 col-md-6">
+                        <div className="item">
+                            <Link to={`/RoomDetails/3`}>
+                                <img src={properties_03} alt="DELUXE VILLA" />
+                            </Link>
+                            <span className="category">Single Room</span>
+                            <h6>THB 5000</h6>
+                            <h4>POOL VILLA</h4>
+                            <ul>
+                                <li>Number of rooms: <span>1</span></li>
+                                <li>Area: <span>15 x 25m</span></li>
+                                <li>Stay 2 Nights Extra Save <span>5%</span></li>
+                            </ul>
+                            <div className="main-button">
+                                <Link to={`/RoomDetails/3`}><i className="fa fa-calendar"></i> Room Details </Link>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="col-lg-4 col-md-6">
+                        <div className="item">
+                            <Link to={`/RoomDetails/4`}>
+                                <img src={properties_04} alt="DELUXE VILLA" />
+                            </Link>
+                            <span className="category">Double Room</span>
+                            <h6>THB 6000</h6>
+                            <h4>DELUXE VILLA</h4>
+                            <ul>
+                                <li>Number of rooms: <span>2</span></li>
+                                <li>Area: <span>20 x 20m</span></li>
+                                <li>Stay 2 Nights Extra Save <span>5%</span></li>
+                            </ul>
+                            <div className="main-button">
+                                <Link to={`/RoomDetails/4`}><i className="fa fa-calendar"></i> Room Details </Link>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="col-lg-4 col-md-6">
+                        <div className="item">
+                            <Link to={`/RoomDetails/5`}>
+                                <img src={properties_05} alt="DELUXE VILLA" />
+                            </Link>
+                            <span className="category">Double Room</span>
+                            <h6>THB 65000</h6>
+                            <h4>PREMIER DELUXE VILLA</h4>
+                            <ul>
+                                <li>Number of rooms: <span>3</span></li>
+                                <li>Area: <span>25 x 25m</span></li>
+                                <li>Stay 2 Nights Extra Save <span>10%</span></li>
+                            </ul>
+                            <div className="main-button">
+                                <Link to={`/RoomDetails/5`}><i className="fa fa-calendar"></i> Room Details </Link>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="col-lg-4 col-md-6">
+                        <div className="item">
+                            <Link to={`/RoomDetails/6`}>
+                                <img src={properties_06} alt="DELUXE VILLA" />
+                            </Link>
+                            <span className="category">Double Room</span>
+                            <h6>THB 7500</h6>
+                            <h4>POOL VILLA</h4>
+                            <ul>
+                                <li>Number of rooms: <span>4</span></li>
+                                <li>Area: <span>30 x 30m</span></li>
+                                <li>Stay 2 Nights Extra Save <span>12%</span></li>
+                            </ul>
+                            <div className="main-button">
+                                <Link to={`/RoomDetails/6`}><i className="fa fa-calendar"></i> Room Details </Link>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </div>
-            </div>
-            <div className="col-lg-4 col-md-6">
-              <div className="item">
-                <Link to="#d"><img src={properties_03} alt="" /></Link>
-                <span className="category">Single Room</span>
-                <h6>THB 3500</h6>
-                <h4>DELUXE VILLA</h4>
-                <ul>
-                  <li>Number of rooms: <span>1</span></li>
-                  <li>Area: <span>15 x 15m</span></li>
-                  <li>Stay 2 Nights Extra Save <span>THB 500</span></li>
-                </ul>
-                <div className="main-button">
-                  <Link to="/RoomDetails"><i className="fa fa-calendar"></i> Room Details </Link>
-                </div>
-              </div>
-            </div>
-            <div className="col-lg-4 col-md-6">
-              <div className="item">
-                <Link to="#d"><img src={properties_04} alt="" /></Link>
-                <span className="category">Single Room</span>
-                <h6>THB 3500</h6>
-                <h4>DELUXE VILLA</h4>
-                <ul>
-                  <li>Number of rooms: <span>1</span></li>
-                  <li>Area: <span>15 x 15m</span></li>
-                  <li>Stay 2 Nights Extra Save <span>THB 500</span></li>
-                </ul>
-                <div className="main-button">
-                  <Link to="/RoomDetails"><i className="fa fa-calendar"></i> Room Details </Link>
-                </div>
-              </div>
-            </div>
-            <div className="col-lg-4 col-md-6">
-              <div className="item">
-                <Link to="#d"><img src={properties_05} alt="" /></Link>
-                <span className="category">Double Room</span>
-                <h6>THB 5000</h6>
-                <h4>DELUXE VILLA</h4>
-                <ul>
-                  <li>Number of rooms: <span>2</span></li>
-                  <li>Area: <span>20 x 20m</span></li>
-                  <li>Stay 2 Nights Extra Save <span>THB 1000</span></li>
-                </ul>
-                <div className="main-button">
-                  <Link to="/RoomDetails"><i className="fa fa-calendar"></i> Room Details </Link>
-                </div>
-              </div>
-            </div>
-            <div className="col-lg-4 col-md-6">
-              <div className="item">
-                <Link to="#d"><img src={properties_06} alt="" /></Link>
-                <span className="category">Double Room</span>
-                <h6>THB 4000</h6>
-                <h4>DELUXE VILLA</h4>
-                <ul>
-                  <li>Number of rooms: <span>2</span></li>
-                  <li>Area: <span>18 x 18m</span></li>
-                  <li>Stay 2 Nights Extra Save <span>THB 800</span></li>
-                </ul>
-                <div className="main-button">
-                  <Link to="/RoomDetails"><i className="fa fa-calendar"></i> Room Details </Link>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>    
-      </div>
+            </div>    
+        </div>
 
       <div className="contact section">
     <div className="container">

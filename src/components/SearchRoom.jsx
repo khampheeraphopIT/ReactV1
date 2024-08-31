@@ -10,6 +10,7 @@ import properties_04 from '../assets/images/property-04.jpg'
 import properties_05 from '../assets/images/property-05.jpg'
 import properties_06 from '../assets/images/property-06.jpg'
 import { Link, useNavigate } from 'react-router-dom';
+import Logo from '../assets/images/logo.jpg'
 
 const SearchRoom = () => {
   const [filter, setFilter] = useState('*')
@@ -59,14 +60,15 @@ const SearchRoom = () => {
             <div className="col-12">
               <nav className="main-nav">
                 <Link to="/" className="logo">
-                  <h1>baralibeach</h1>
+                  <img src={Logo} alt="" />
                 </Link>
 
                 <ul className="nav">
                   <li><Link to="/" className="active">Home</Link></li>
                   <li><Link to="/SearchRoom">Search Room</Link></li>
                   <li><Link to="/Contact">Contact Us</Link></li>
-                  <li><Link to="/RoomDetails"><i className="fa fa-calendar"></i>Book Now</Link></li>
+                  <li><Link to="/RoomDetails"><i className="fa fa-calendar"></i><span>Book Now</span></Link></li>
+                  <li><Link to='/Login'>Login</Link></li>
                 </ul>
                 <Link className='menu-trigger'>
                   <span>Menu</span>

@@ -6,6 +6,7 @@ import properties_03 from '../assets/images/property-03.jpg'
 import properties_04 from '../assets/images/property-04.jpg'
 import properties_05 from '../assets/images/property-05.jpg'
 import properties_06 from '../assets/images/property-06.jpg'
+import Logo from '../assets/images/logo.jpg'
 
 const images = {
     'property-01.jpg': properties_01,
@@ -51,13 +52,14 @@ const RoomDetails = () => {
                         <div className="col-12">
                             <nav className="main-nav">
                                 <a href="/" className="logo">
-                                    <h1>baralibeach</h1>
+                                    <img src={Logo} alt="" />
                                 </a>
                                 <ul className="nav">
                                     <li><Link to="/" className="active">Home</Link></li>
                                     <li><Link to="/SearchRoom">Search Room</Link></li>
                                     <li><Link to="/Contact">Contact Us</Link></li>
-                                    <li><Link to="/RoomDetails"><i className="fa fa-calendar"></i>Book Now</Link></li>
+                                    <li><Link to="/RoomDetails"><i className="fa fa-calendar"></i><span>Book Now</span></Link></li>
+                                    <li><Link to='/Login'>Login</Link></li>
                                 </ul>
                                 <Link className='menu-trigger'>
                                     <span>Menu</span>
@@ -83,7 +85,7 @@ const RoomDetails = () => {
                     <div className="row">
                         <div className="col-lg-12">
                             <div className="item">
-                            <img src={images[room.image]} alt={room.name} />
+                                <img src={images[room.image]} alt={room.name} />
                                 <h1>{room.name}</h1>
                                 <p>Price: THB {room.price}</p>
                                 <p>Number of rooms: {room.NumberOfRooms}</p>

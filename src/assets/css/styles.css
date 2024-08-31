@@ -320,23 +320,15 @@ Header Style
   display: inline-block;
 }
 
-.header-area .main-nav .logo h1 {
-  line-height: 100px;
-  font-size: 28px;
-  text-transform: uppercase;
-  color: #1e1e1e;
-  font-weight: 700;
-  letter-spacing: 2px;
-}
-
-.background-header .main-nav .logo h1 {
-  line-height: 80px;
+.header-area .main-nav .logo {
+  width: 80px;
+  margin: 1rem;
 }
 
 .header-area .main-nav ul.nav {
   flex-basis: 100%;
   margin-top: 30px;
-  justify-content: right;
+  
   -webkit-transition: all 0.3s ease 0s;
   -moz-transition: all 0.3s ease 0s;
   -o-transition: all 0.3s ease 0s;
@@ -357,6 +349,7 @@ Header Style
 
 .header-area .main-nav .nav li a {
   display: block;
+  margin-left: 5rem;
   padding-left: 20px;
   padding-right: 20px;
   font-weight: 500;
@@ -373,14 +366,15 @@ Header Style
   letter-spacing: .25px;
 }
 
-.header-area .main-nav .nav li:last-child a {
+.header-area .main-nav .nav li span {
   background-color: #1e1e1e;
   color: #fff;
   font-size: 14px;
   font-weight: 400;
   text-transform: none;
   border-radius: 20px;
-  padding-left: 0px;
+  padding: 5px;
+  margin: 4px;
 }
 
 .header-area .main-nav .nav li:last-child a i {
@@ -1231,6 +1225,104 @@ footer p a {
 footer p a:hover {
   opacity: 0.75;
 }
+
+/* การตั้งค่าหลักสำหรับ .page-Login */
+.page-Login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f6f6f6;
+  padding: 20px; /* เพิ่มพื้นที่รอบๆ */
+}
+
+/* การตั้งค่าสำหรับ .container-Login */
+.page-Login .container-Login {
+  background-color: #ffffff;
+  padding: 40px; /* เพิ่ม padding รอบๆ ภายในกล่อง */
+  border-radius: 10px;
+  width: 100%;
+  max-width: 500px; /* กำหนดความกว้างสูงสุด */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* เพิ่มเงาเพื่อให้ดูลอยขึ้น */
+}
+
+/* การตั้งค่าหลักสำหรับ .wrapper */
+.page-Login .container-Login .wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+}
+
+/* การตั้งค่าสำหรับ .logo */
+.wrapper .logo {
+  margin-bottom: 20px;
+}
+
+.logo img {
+  max-width: 100px;
+  height: auto;
+}
+
+/* การตั้งค่าสำหรับ .input-box */
+.wrapper .input-box {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.wrapper .input-box label {
+  display: block;
+  color: #000000;
+  margin-bottom: 5px; /* เพิ่มระยะห่างระหว่าง label กับ input */
+}
+
+.wrapper .input-box input {
+  background-color: #f6f6f6;
+  width: 100%;
+  padding: 15px;
+  border-radius: 15px;
+  border: 1px solid #000000;
+  font-size: 16px;
+}
+
+/* การตั้งค่าสำหรับ .remember-forgot */
+.wrapper .remember-forgot {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  margin: 1rem;
+  width: 100%;
+}
+
+/* การตั้งค่าสำหรับ .btn */
+.wrapper .btn {
+  width: 100%;
+  max-width: 250px; /* กำหนดความกว้างสูงสุดให้ปุ่ม */
+  cursor: pointer;
+  font-size: 16px;
+  color: #fff;
+  background-color: #06ff0e;
+  border-radius: 15px;
+  text-align: center;
+  font-weight: 600;
+  padding: 15px;
+  margin: 20px 0; /* เพิ่มระยะห่างด้านบนและด้านล่าง */
+}
+
+.wrapper .btn:hover {
+  background-color:#06ff0e ;
+}
+
+/* การตั้งค่าสำหรับ .register-link */
+.register-link p {
+  margin-top: 20px;
+  text-align: center;
+  font-weight: 600;
+}
+
+
+
 
 
 /* 

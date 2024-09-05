@@ -44,7 +44,7 @@ function Login() {
             html: <i>{result.message}</i>,
             icon: 'success'
           }).then((value) => {
-            localStorage.setItem('token', result.accessToken)
+            localStorage.setItem('token',  result.accessToken)
             navigate('/profile')
           })
         } else {
@@ -93,7 +93,6 @@ function Login() {
                   <li><Link to="/SearchRoom">Search Room</Link></li>
                   <li><Link to="/Contact">Contact Us</Link></li>
                   <li><Link to="/RoomDetails"><i className="fa fa-calendar"></i><span>Book Now</span></Link></li>
-                  <li><Link to='/Login'>Login</Link></li>
                 </ul>
                 <Link className='menu-trigger'>
                   <span>Menu</span>

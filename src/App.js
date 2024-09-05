@@ -7,6 +7,9 @@ import Contact from "./components/Contact";
 import Login from './components/Login'
 import Register from "./components/Register";
 import Profile from "./components/Profile";
+import Profile1 from './components/Profile';
+import bookingDetails from './components/bookingDetail'
+import booking from './components/booking'
 
 function App() {
     return (
@@ -19,6 +22,8 @@ function App() {
                 <Route path="/Login" element={<Login />}></Route>
                 <Route path="/Register" element={<Register />}></Route>
                 <Route path="/Profile" element={<Profile />}></Route>
+                <Route path="/bookingDetails/:bookingId" element={<bookingDetails />}></Route>
+                <Route path="/booking" element={<booking />}></Route>
             </Routes>
         </BrowserRouter>
     )
